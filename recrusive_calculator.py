@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, font
 
 
-# --- Recursive Functions ---
+
 def faktorial(n):
     if n == 0 or n == 1:
         return 1
@@ -23,7 +23,7 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
-# --- GUI Logic Functions ---
+
 def tambah_digit(digit):
     global fokus_input
     if fokus_input == "n":
@@ -45,7 +45,7 @@ def ganti_input():
     fokus_input = "x" if fokus_input == "n" else "n"
     label_fokus.config(text=f"Input aktif: {'n' if fokus_input == 'n' else 'x'}")
 
-    # Visual indicator for active input
+
     entry_n.config(bg="#2e2e2e" if fokus_input == "n" else "#252525")
     entry_x.config(bg="#2e2e2e" if fokus_input == "x" else "#252525")
 
@@ -77,25 +77,25 @@ def hitung():
 
 
 def on_resize(event):
-    # This function handles dynamic resizing
+
     update_layout()
 
 
 def update_layout():
-    # Get current window size
+
     window_width = window.winfo_width()
     window_height = window.winfo_height()
 
-    # Calculate center position
+
     center_frame.place(relx=0.5, rely=0.5, anchor="center")
 
-    # Adjust frame size based on window size
+
     min_width = 300
     min_height = 400
     width = max(min_width, int(window_width * 0.8))
     height = max(min_height, int(window_height * 0.8))
 
-    # Update fonts based on window size
+
     base_size = min(12, max(8, int(window_width / 50)))
     custom_font.configure(size=base_size)
     button_font.configure(size=base_size)
@@ -103,7 +103,7 @@ def update_layout():
     result_font.configure(size=base_size + 1)
 
 
-# --- GUI Setup ---
+
 window = tk.Tk()
 window.title("Kalkulator Rekursif")
 
